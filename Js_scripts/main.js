@@ -1,6 +1,6 @@
 /**
  * OpenSource Compass - Interactivity Script
- * Handles scroll-triggered reveal animations and micro-interactions.
+ * Handles scroll-triggered reveal animations, micro-interactions, and data fetching.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -41,4 +41,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 3. Load Programs from JSON (Solves Issue #64)
+    loadHomePagePrograms();
 });
+
+// Function to fetch and render programs on the home page
+function loadHomePagePrograms() {
+    const container = document.getElementById('programs-container');
+    
+    // Check if container exists (to avoid errors on pages without this section)
+    if (!container) return;
+
+    fetch('data/programs.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(programs => {
+            container.innerHTML = programs.map(program => `
+                <div class="card">
+                    <h4>${program.name}</h4>
+                    <p>${program.description}</p>
+                    <span class="badge">${program.difficulty}</span>
+                </div>
+            `).join('');
+        })
+        .catch(error => {
+            console.error('Error loading programs:', error);
+            container.innerHTML = `
+                <div class="error-message">
+                    <p>Failed to load programs. Please try refreshing the page.</p>
+                </div>
+            `;
+        });
+}

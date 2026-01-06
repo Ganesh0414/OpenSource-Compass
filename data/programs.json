@@ -173,5 +173,56 @@
       "Refactor Qt components",
       "Improve accessibility support"
     ]
+  },
+  {
+    "id": 8,
+    "name": "Winter of Code (WoC)",
+    "description": "Mentorship-based program for student contributors.",
+    "status": "Active",
+    "difficulty": "Beginner → Intermediate",
+    "timeline": "Winter",
+    "stipend": "Certificates",
+    "contributors": 0,
+    "issues": 0,
+    "organizations": 0,
+    "contributions": [
+        "Mentorship",
+        "Project Development"
+    ],
+    "issues_list": []
+  },
+  {
+    "id": 9,
+    "name": "Social Summer of Code (SSoC)",
+    "description": "Community-driven program for open-source beginners.",
+    "status": "Active",
+    "difficulty": "Beginner",
+    "timeline": "Summer",
+    "stipend": "Certificates",
+    "contributors": 0,
+    "issues": 0,
+    "organizations": 0,
+    "contributions": [
+        "Open source contributions"
+    ],
+    "issues_list": []
+  },
+  {
+    "id": 10,
+    "name": "Linux Foundation Mentorship",
+    "description": "Industry-backed program for open-source development.",
+    "status": "Active",
+    "difficulty": "Intermediate",
+    "timeline": "Varies",
+    "stipend": "Varies",
+    "contributors": 0,
+    "issues": 0,
+    "organizations": 1,
+    "contributions": [
+        "Kernel development",
+        "Cloud Native",
+        "Networking"
+    ],
+    "issues_list": []
   }
 ]

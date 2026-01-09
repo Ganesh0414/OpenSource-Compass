@@ -332,3 +332,40 @@ window.addEventListener('click', function(event) {
         closeModal();
     }
 });
+
+// Subscription Form Handling
+const subscribeForm = document.getElementById('subscribeForm');
+
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const emailInput = document.getElementById('subscriberEmail');
+        const messageDisplay = document.getElementById('subscriptionMessage');
+        const email = emailInput.value.trim();
+        
+        // Client-side Email Validation Regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (emailRegex.test(email)) {
+            // Mock Integration: Log the data to the console
+            console.log(`New Subscription Request: ${email}`);
+            
+            // Update UI with success message
+            messageDisplay.textContent = "Thank you for subscribing! You'll be notified of upcoming deadlines.";
+            messageDisplay.className = "subscription-message message-success";
+            
+            // Reset the form
+            emailInput.value = '';
+            
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                messageDisplay.textContent = "";
+            }, 5000);
+        } else {
+            // Error handling for invalid email format
+            messageDisplay.textContent = "Please enter a valid email address.";
+            messageDisplay.className = "subscription-message message-error";
+        }
+    });
+}

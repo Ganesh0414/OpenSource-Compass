@@ -10,9 +10,9 @@
 [![GitHub License](https://img.shields.io/github/license/sayeeg-11/OpenSource-Compass)](LICENSE)
 </div>
 
-## ❄️ Script Winter of Code (SWOC) 2026
+## ❄️ Social Winter of Code (SWOC) 2026
 
-**Script Winter of Code (SWOC)** is a winter-long open-source program that mentors students through meaningful, real-world contributions.
+**Social Winter of Code (SWOC)** is a winter-long open-source program that mentors students through meaningful, real-world contributions.
 
 ---
 
@@ -337,7 +337,7 @@ We don't accept:
 
 Join these cool programs and get recognized! 🏆
 
-- **SWOC** - Student Winter of Code 🎿
+- **SWOC** - Social Winter of Code 🎿
 - **GSSoC** - GirlScript Summer Code 👩‍💻
 - **GSoC** - Google Summer of Code 🚀
 - **Hacktoberfest** - October fest! 🎃

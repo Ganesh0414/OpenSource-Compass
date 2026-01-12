@@ -6,8 +6,8 @@
     --success-green: #3CCF91;
     --warning-red: #FF6B6B;
     --warning-orange: #FF9F43;
-    --white: #FFFFFF;
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --white: #FFF;
+    --card-shadow: 0 4px 20px rgb(0 0 0 / 8%);
     --transition: all 0.3s ease;
 }
 
@@ -73,7 +73,7 @@ nav a:hover, nav a.active {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background: rgba(77, 150, 255, 0.1);
+    background: rgb(77 150 255 / 10%);
 }
 
 .hero-section::after {
@@ -84,7 +84,7 @@ nav a:hover, nav a.active {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: rgba(61, 207, 145, 0.1);
+    background: rgb(61 207 145 / 10%);
 }
 
 .container {
@@ -166,12 +166,12 @@ nav a:hover, nav a.active {
 
 .workflow-step:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 12%);
 }
 
 .workflow-step.completed {
     border-color: var(--success-green);
-    background: rgba(60, 207, 145, 0.05);
+    background: rgb(60 207 145 / 5%);
 }
 
 .workflow-step-number {
@@ -188,7 +188,7 @@ nav a:hover, nav a.active {
     justify-content: center;
     font-weight: 700;
     font-size: 18px;
-    box-shadow: 0 4px 10px rgba(77, 150, 255, 0.3);
+    box-shadow: 0 4px 10px rgb(77 150 255 / 30%);
 }
 
 .workflow-step-icon {
@@ -224,7 +224,7 @@ nav a:hover, nav a.active {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     border: none;
     color: #fff;
     padding: 4px 10px;
@@ -235,7 +235,7 @@ nav a:hover, nav a.active {
 }
 
 .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
 }
 
 .copy-btn.copied {
@@ -285,12 +285,12 @@ nav a:hover, nav a.active {
 }
 
 .do-badge {
-    background: rgba(60, 207, 145, 0.2);
+    background: rgb(60 207 145 / 20%);
     color: var(--success-green);
 }
 
 .dont-badge {
-    background: rgba(255, 107, 107, 0.2);
+    background: rgb(255 107 107 / 20%);
     color: var(--warning-red);
 }
 
@@ -306,6 +306,7 @@ nav a:hover, nav a.active {
     gap: 15px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .dos-list li:last-child, .donts-list li:last-child {
     border-bottom: none;
 }
@@ -339,7 +340,7 @@ nav a:hover, nav a.active {
 }
 
 .pr-template-header {
-    background: rgba(31, 60, 136, 0.05);
+    background: rgb(31 60 136 / 5%);
     padding: 20px 30px;
     border-bottom: 1px solid #eee;
 }
@@ -365,10 +366,12 @@ nav a:hover, nav a.active {
     margin-bottom: 15px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .pr-template-body li {
     margin-bottom: 5px;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .pr-template-body p {
     margin-bottom: 15px;
     color: #555;
@@ -392,7 +395,7 @@ nav a:hover, nav a.active {
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto 30px;
-    opacity: 0.9;
+    opacity: 90%;
 }
 
 .cta-buttons {
@@ -420,9 +423,9 @@ nav a:hover, nav a.active {
 }
 
 .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgb(255 255 255 / 90%);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgb(0 0 0 / 20%);
 }
 
 .btn-secondary {
@@ -432,7 +435,7 @@ nav a:hover, nav a.active {
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     transform: translateY(-3px);
 }
 
@@ -445,12 +448,13 @@ footer {
     margin-top: auto;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 footer p {
     font-size: 14px;
 }
 
 /* ---------- Responsive Design ---------- */
-@media (max-width: 992px) {
+@media (width <= 992px) {
     .hero-title {
         font-size: 36px;
     }
@@ -460,7 +464,7 @@ footer p {
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     header {
         padding: 16px 5%;
     }

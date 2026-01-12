@@ -3,16 +3,16 @@
 # 🌍 OpenSource Compass  
 ### Navigate Your Open Source Journey with Confidence
 
-<img src="assets/updated image.png" alt="OpenSource Compass – SWOC'26 Banner" width="100%" />
+<img src="frontend/library/assets/swoc_banner.png" alt="OpenSource Compass – SWOC'26 Banner" width="100%" />
 
 [![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/sayeeg-11/OpenSource-Compass)
 [![GitHub Issues](https://img.shields.io/github/issues/sayeeg-11/OpenSource-Compass)](https://github.com/sayeeg-11/OpenSource-Compass/issues)
 [![GitHub License](https://img.shields.io/github/license/sayeeg-11/OpenSource-Compass)](LICENSE)
 </div>
 
-## ❄️ Script Winter of Code (SWOC) 2026
+## ❄️ Social Winter of Code (SWOC) 2026
 
-**Script Winter of Code (SWOC)** is a winter-long open-source program that mentors students through meaningful, real-world contributions.
+**Social Winter of Code (SWOC)** is a winter-long open-source program that mentors students through meaningful, real-world contributions.
 
 ---
 
@@ -71,13 +71,118 @@ No jargon. No confusion. Just clear steps to help you start contributing with co
 
 ```
 OpenSource-Compass/
-├── 📄 index.html (Main page)
-├── 📁 guides/ (Learning materials)
-├── 📁 programs/ (Open source programs)
-├── 📁 resources/ (Videos & articles)
-├── 🎨 css/ (Beautiful styling)
-├── ⚙️ js/ (Interactive features)
-└── 📊 data/ (Program info)
+│
+├── .github/                         # GitHub-specific configs
+│   ├── ISSUE_TEMPLATE/              # Issue templates
+│   │   ├── bug_report.yml
+│   │   ├── documentation_update.yml
+│   │   ├── feature_request.yml
+│   │   ├── guide_proposal.yml
+│   │   └── program_addition.yml
+│   │
+│   ├── workflows/                   # GitHub Actions (CI/CD)
+│   │   ├── issue-auto-comment.yml
+│   │   ├── jekyll-gh-pages.yml
+│   │   ├── pr-review.yml
+│   │   └── static.yml
+│   │
+│   └── PULL_REQUEST_TEMPLATE.md     # PR template
+│
+├── backend/                         # Backend (Node + Express)
+│   ├── config/                      # Configuration files
+│   │   └── db.js                    
+│   │
+│   ├── controllers/                 # Request handling logic
+│   │   └── authController.js
+│   │
+│   ├── middleware/                  # Custom middlewares
+│   │   └── authMiddleware.js
+│   │
+│   ├── models/                      # Database Models
+│   │   └── User.js
+│   │
+│   ├── routes/                      # API routes
+│   │   └── authRoutes.js
+│   │
+│   ├── server.js                    # Backend entry point
+│   ├── package.json
+│   ├── package-lock.json
+│   └── .gitignore
+│
+├── frontend/                        # Frontend resources 
+│   ├── css/                         # Stylesheets
+│   │   ├── auth.css
+│   │   ├── beginners-guide.css
+│   │   ├── chatbot.css
+│   │   ├── contribute.css
+│   │   ├── contributors.css
+│   │   ├── guides.css
+│   │   ├── navigation.css
+│   │   ├── program.css
+│   │   ├── resources.css
+│   │   └── style.css
+│   │
+│   ├── js/                          # Client-side Scripts
+│   │   ├── auth.js
+│   │   ├── chatbot.js
+│   │   ├── contribute.js
+│   │   ├── contributors.js
+│   │   ├── guides.js
+│   │   ├── main.js
+│   │   ├── profile.js
+│   │   ├── programs.js
+│   │   ├── resources.js
+│   │   ├── search.js
+│   │   └── theme.js
+│   │
+│   ├── data/                        # Static JSON data
+│   │   ├── chatbot_data.json
+│   │   └── programs.json
+│   │
+│   ├── pages/                       # All HTML pages
+│   │   ├── Event/
+│   │   │   ├── gsoc.html
+│   │   │   ├── gssoc.html
+│   │   │   ├── hacktober.html
+│   │   │   ├── linux.html
+|   |   |   ├── ssoc.html
+│   │   │   └── outreachy.html
+│   │   │    
+│   │   ├── contribute.html
+│   │   ├── contributors.html
+│   │   ├── faq.html
+│   │   ├── guides.html
+│   │   ├── programs.html
+│   │   ├── resources.html
+│   │   
+│   │
+│   └── library/                     # Frontend reusable assets
+│       ├── assets/
+│       │   ├── program_logo/
+│       │   │   ├── gsoc.webp
+│       │   │   ├── gssoc.webp
+│       │   │   ├── hacktober.webp
+│       │   │   ├── linux.webp
+│       │   │   ├── outreachy.webp
+│       │   │   └── ssoc.webp
+│       │   │
+│       │   ├── logo.png
+│       │   └── swoc_banner.png
+│       │
+│       └── guides_pdf/
+│           ├── GSOC.pdf
+│           ├── GSSOC.pdf
+│           ├── Hacktoberfest.pdf
+│           ├── LFX_Mentorship.pdf
+│           ├── Outreachy.pdf
+│           └── SSoC.pdf
+│
+├── home.html                       # Main landing page (GitHub Pages entry)
+├── CODE_OF_CONDUCT.md              # Community Guidelines
+├── CONTRIBUTING.md                 # Contributing Guidelines
+├── LICENSE                         # OpenSource License
+└── README.md                       # Project Overview
+
 ```
 
 ---
@@ -106,6 +211,27 @@ OpenSource-Compass/
 > Mentors guide contributors, review pull requests, and provide feedback throughout SWOC’26.
 
 ---
+
+<div align="left">
+
+## 🌍 Community & Contributors
+
+### 💖 Contributors  
+Thanks to these amazing people who have contributed to **OpenSource Compass** ✨  
+
+<a href="https://github.com/sayeeg-11/OpenSource-Compass/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sayeeg-11/OpenSource-Compass" alt="Contributors" />
+</a>
+
+<br/><br/>
+
+### ⭐ Project Support
+
+[![Stars](https://img.shields.io/github/stars/sayeeg-11/OpenSource-Compass?style=social)](https://github.com/sayeeg-11/OpenSource-Compass/stargazers)
+&nbsp;&nbsp;
+[![Forks](https://img.shields.io/github/forks/sayeeg-11/OpenSource-Compass?style=social)](https://github.com/sayeeg-11/OpenSource-Compass/network/members)
+
+</div>
 
 ## 🤝 Contribution Guidelines (SWOC’26)
 
@@ -232,7 +358,7 @@ We don't accept:
 
 Join these cool programs and get recognized! 🏆
 
-- **SWOC** - Student Winter of Code 🎿
+- **SWOC** - Social Winter of Code 🎿
 - **GSSoC** - GirlScript Summer Code 👩‍💻
 - **GSoC** - Google Summer of Code 🚀
 - **Hacktoberfest** - October fest! 🎃

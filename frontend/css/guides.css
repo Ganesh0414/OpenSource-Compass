@@ -4,7 +4,7 @@
     --light-gray: #F5F7FA;
     --text-dark: #2E2E2E;
     --success-green: #3CCF91;
-    --white: #FFFFFF;
+    --white: #FFF;
     --sidebar-width: 280px;
     --sidebar-collapsed-width: 70px;
 }
@@ -113,6 +113,7 @@ nav a:hover, nav a.active {
     margin: 0;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 .sidebar-menu a {
     display: flex;
     align-items: center;
@@ -125,7 +126,7 @@ nav a:hover, nav a.active {
 }
 
 .sidebar-menu a:hover, .sidebar-menu a.active {
-    background-color: rgba(77, 150, 255, 0.1);
+    background-color: rgb(77 150 255 / 10%);
     border-left: 3px solid var(--secondary-blue);
     color: var(--primary-blue);
 }
@@ -228,7 +229,7 @@ nav a:hover, nav a.active {
 }
 
 .copy-btn {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgb(255 255 255 / 10%);
     border: none;
     color: #fff;
     padding: 4px 10px;
@@ -239,7 +240,7 @@ nav a:hover, nav a.active {
 }
 
 .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
 }
 
 .copy-btn.copied {
@@ -308,13 +309,13 @@ pre {
     background: white;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .resource-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
 }
 
 .resource-card h5 {
@@ -346,12 +347,13 @@ footer {
     margin-top: auto;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 footer p {
     font-size: 14px;
 }
 
 /* ---------- Responsive Design ---------- */
-@media (max-width: 992px) {
+@media (width <= 992px) {
     .sidebar {
         position: fixed;
         left: 0;
@@ -379,7 +381,7 @@ footer p {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.4);
+        background: rgb(0 0 0 / 40%);
         z-index: 80;
         display: none;
     }
@@ -389,7 +391,7 @@ footer p {
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .guide-header h2 {
         font-size: 26px;
     }

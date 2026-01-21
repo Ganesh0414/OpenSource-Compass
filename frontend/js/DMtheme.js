@@ -1,41 +1,37 @@
-/* theme.js - Modular Dark Mode Logic */
-
 document.addEventListener('DOMContentLoaded', () => {
     const themeStorageKey = 'selectedTheme';
     const darkThemeClass = 'dark-mode';
 
-    // 1. Check for saved preference immediately on load
+    // 1. Apply saved theme immediately on load
     const savedTheme = localStorage.getItem(themeStorageKey);
     if (savedTheme === 'dark') {
         document.body.classList.add(darkThemeClass);
         updateIcons(true);
     }
 
-    // 2. Global Event Listener (Works for dynamically loaded navbars)
+    // 2. Listen for clicks on the toggle button (works with dynamic navbars)
     document.addEventListener('click', (event) => {
-        // Check if the clicked element is our toggle button (or icon inside it)
+        // Find the toggle button (either the button itself or the icon inside it)
         const toggleBtn = event.target.closest('#theme-toggle, #theme-icon');
         
         if (toggleBtn) {
-            event.preventDefault(); // Stop default link action
+            event.preventDefault(); // Stop it from acting like a link
             
-            // Toggle the class on the body
+            // Toggle the dark mode class
             document.body.classList.toggle(darkThemeClass);
             const isDark = document.body.classList.contains(darkThemeClass);
 
-            // Save the user's preference
+            // Save the user's choice
             localStorage.setItem(themeStorageKey, isDark ? 'dark' : 'light');
 
-            // Update the icon (Moon <-> Sun)
+            // Flip the icon
             updateIcons(isDark);
         }
     });
 
-    // Helper function to swap icons
+    // Helper to switch the icon between Moon and Sun
     function updateIcons(isDark) {
-        // Find all theme icons on the page (mobile & desktop)
         const icons = document.querySelectorAll('.fa-moon, .fa-sun');
-        
         icons.forEach(icon => {
             if (isDark) {
                 icon.classList.remove('fa-moon');

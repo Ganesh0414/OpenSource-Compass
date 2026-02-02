@@ -34,117 +34,118 @@
       /* Reset line height for precise icons */
     }
     /* Container to center the entire grid */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
-  justify-content: center; /* Centers the grid itself */
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-/* Container Layout */
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
-    justify-content: center; /* Centers the grid on the page */
-}
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
+      justify-content: center; /* Centers the grid itself */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    /* Container Layout */
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 60px auto;
+        padding: 0 20px;
+        justify-content: center; /* Centers the grid on the page */
+    }
 
-/* Card Core Design */
-.card {
-    background: #ffffff;
-    border: 1px solid #e2d1a8;
-    border-radius: 20px;
-    padding: 50px 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    /* Centers internal items horizontally */
-    text-align: center;      /* Centers the text lines */
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
+    /* Card Core Design */
+    .card {
+        background: #ffffff;
+        border: 1px solid #e2d1a8;
+        border-radius: 20px;
+        padding: 50px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    /* Centers internal items horizontally */
+        text-align: center;      /* Centers the text lines */
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 100%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
 
-/* Golden Glow Hover Effect */
-.card:hover {
-    transform: translateY(-10px);
-    border-color: #b59d5c;
-    box-shadow: 0 20px 40px rgba(181, 157, 92, 0.2) !important;
-}
+    /* Golden Glow Hover Effect */
+    .card:hover {
+        transform: translateY(-10px);
+        border-color: #b59d5c;
+        box-shadow: 0 20px 40px rgba(181, 157, 92, 0.2) !important;
+    }
 
-/* Icon Centering */
-.card-icon {
-    font-size: 3rem;
-    color: #b59d5c;
-    margin-bottom: 25px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    /* Icon Centering */
+    .card-icon {
+        font-size: 3rem;
+        color: #b59d5c;
+        margin-bottom: 25px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-/* Typography */
-.card h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-}
+    /* Typography */
+    .card h4 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: #1a1a1a;
+        margin-bottom: 15px;
+    }
 
-.card p {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    flex-grow: 1; /* Pushes the badge to the bottom for row alignment */
-}
+    .card p {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        flex-grow: 1; /* Pushes the badge to the bottom for row alignment */
+    }
 
-/* Badge Styling */
-.badge {
-    background: #b59d5c;
-    color: #fff;
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 10px rgba(181, 157, 92, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-/* Individual Card Centering */
-.program-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;    /* Centers internal elements horizontally */
-  text-align: center;      /* Centers text within elements */
-  height: 100%;
-  padding: 40px 30px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  transition: var(--card-transition);
-}
+    /* Badge Styling */
+    .badge {
+        background: #b59d5c;
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        box-shadow: 0 4px 10px rgba(181, 157, 92, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    /* Individual Card Centering */
+    .program-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;    /* Centers internal elements horizontally */
+      text-align: center;      /* Centers text within elements */
+      height: 100%;
+      padding: 40px 30px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      transition: var(--card-transition);
+    }
 
-/* Icon Area Centering */
-.program-icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--primary-gold);
-}
+    /* Icon Area Centering */
+    .program-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-gold);
+    }
 
-/* Pushing Button to Bottom for Alignment */
-.program-card .card-btn {
-  margin-top: auto; /* Aligns buttons across a row */
-}
+    /* Pushing Button to Bottom for Alignment */
+    .program-card .card-btn {
+      margin-top: auto; /* Aligns buttons across a row */
+    }
+
     /* --- FEATURE: Golden Glow Hover Effect for Legendary Cards --- */
     #programs .card {
       transition: all 0.3s ease-in-out;
@@ -184,7 +185,92 @@
       position: relative;
       z-index: 1;
     }
-  </style>
+
+    /* Base hidden state */
+    .why-journey {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* Horizontal timeline line */
+    .journey-line {
+      position: absolute;
+      top: 40%;
+      left: 8%;
+      width: 84%;
+      height: 3px;
+      background: linear-gradient(to right, #d4af37, #f5d76e);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.2s ease;
+      z-index: 1;
+    }
+
+    /* Steps initially hidden */
+    .journey-steps {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .journey-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-width: 120px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .journey-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #d4af37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+
+      /* THIS ensures perfect centering */
+      position: relative;
+      z-index: 3;
+    }
+
+    /* Activated state */
+    .why-journey.is-visible .journey-line {
+      transform: scaleX(1);
+    }
+
+    .why-journey.is-visible .journey-step {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .why-journey.is-visible .journey-icon {
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
+      transition: box-shadow 0.6s ease;
+    }
+    /* Sequential reveal */
+    .journey-step:nth-child(1) {
+      transition-delay: 0.3s;
+    }
+    .journey-step:nth-child(2) {
+      transition-delay: 0.6s;
+    }
+    .journey-step:nth-child(3) {
+      transition-delay: 0.9s;
+    }
+
+      </style>
   <link rel="stylesheet" href="frontend/css/recommendations.css" />
 
 </head>
@@ -630,20 +716,23 @@
           <!-- Journey Timeline -->
           <div class="why-journey">
             <div class="journey-line"></div>
+
             <div class="journey-steps">
-              <div class="journey-step" data-aos="zoom-in" data-aos-delay="300">
+              <div class="journey-step" data-step>
                 <div class="journey-icon">
                   <i class="fas fa-rocket"></i>
                 </div>
                 <span>Start</span>
               </div>
-              <div class="journey-step" data-aos="zoom-in" data-aos-delay="400">
+
+              <div class="journey-step" data-step>
                 <div class="journey-icon">
                   <i class="fas fa-code"></i>
                 </div>
                 <span>Contribute</span>
               </div>
-              <div class="journey-step" data-aos="zoom-in" data-aos-delay="500">
+
+              <div class="journey-step" data-step>
                 <div class="journey-icon">
                   <i class="fas fa-trophy"></i>
                 </div>

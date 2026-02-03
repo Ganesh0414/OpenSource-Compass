@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>OpenSource Compass - FAQ</title>
   <link rel="icon" href="../library/assets/favicon.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/chatbot.css" />
+  <link rel="stylesheet" href="../css/pr-generator.css" />
   <link rel="stylesheet" href="/frontend/css/dark-mode.css">
 
   <style>
@@ -28,14 +26,15 @@
       /* Smooth transition for movement and glow */
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
       /* Ensure border is present (transparent initially) to prevent layout jump */
-      border: 1px solid transparent; 
-      border-radius: 8px; 
+      border: 1px solid transparent;
+      border-radius: 8px;
     }
 
     /* LIGHT MODE HOVER */
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4); /* Gold Glow */
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+      /* Gold Glow */
       border-color: #d4af37;
     }
 
@@ -43,9 +42,11 @@
     /* Uses !important to ensure it overrides standard dark mode styles */
     body.dark-mode .card:hover {
       transform: translateY(-8px) !important;
-      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6) !important; /* Slightly brighter glow for dark bg */
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6) !important;
+      /* Slightly brighter glow for dark bg */
       border-color: #d4af37 !important;
-      background-color: #1e1e1e !important; /* Maintains dark card bg */
+      background-color: #1e1e1e !important;
+      /* Maintains dark card bg */
     }
   </style>
 
@@ -54,35 +55,27 @@
 
 <body>
 
-<header>
-      <div class="navbar-container">
-        <h1>
-          <i
-            class="fas fa-compass"
-            style="color: var(--primary-gold); margin-right: 0.4rem"
-          ></i
-          >OpenSource Compass
-        </h1>
-        <div class="nav-links">
-          <a href="../../index.html">Home</a>
-          <a href="./guides.html">Guides</a>
-          <a href="./programs.html">Programs</a>
-          <a href="./Resources.html">Resources</a>
-          <a href="./contributors.html">Contributors</a>
-          <a href="./faq.html">FAQ</a>
-          <a href="./Contribute.html">Contribute</a>
-          <button
-  id="themeToggle"
-  aria-label="Toggle dark mode"
-  title="Toggle dark mode"
-  style="background: none; border: none; color: var(--primary-gold); cursor: pointer; font-size: 1.1rem; margin-left: 0.5rem; transition: transform 0.3s ease;"
->
-  <i class="fas fa-moon" aria-hidden="true"></i>
-</button>
-        </div>
+  <header>
+    <div class="navbar-container">
+      <h1>
+        <i class="fas fa-compass" style="color: var(--primary-gold); margin-right: 0.4rem"></i>OpenSource Compass
+      </h1>
+      <div class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="./guides.html">Guides</a>
+        <a href="./programs.html">Programs</a>
+        <a href="./Resources.html">Resources</a>
+        <a href="./contributors.html">Contributors</a>
+        <a href="./faq.html">FAQ</a>
+        <a href="./Contribute.html">Contribute</a>
+        <button id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"
+          style="background: none; border: none; color: var(--primary-gold); cursor: pointer; font-size: 1.1rem; margin-left: 0.5rem; transition: transform 0.3s ease;">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </button>
       </div>
-    </header>
-<main>
+    </div>
+  </header>
+  <main>
     <section>
       <h3>Frequently Asked Questions</h3>
       <p>Common questions about OpenSource Compass and open source contributions.</p>
@@ -90,94 +83,102 @@
       <div class="card-grid">
         <div class="card">
           <h4>What is OpenSource Compass?</h4>
-          <p>OpenSource Compass is a platform that helps beginners navigate open source by providing structured guides, resources, and program information.</p>
+          <p>OpenSource Compass is a platform that helps beginners navigate open source by providing structured guides,
+            resources, and program information.</p>
         </div>
 
         <div class="card">
           <h4>Do I need programming experience?</h4>
-          <p>No. You can contribute to open source through documentation, design, testing, community support, and many other non-coding roles.</p>
+          <p>No. You can contribute to open source through documentation, design, testing, community support, and many
+            other non-coding roles.</p>
         </div>
 
         <div class="card">
           <h4>How do I get started with open source?</h4>
-          <p>Start by reading contribution guides, choosing a beginner-friendly project, and working on small issues such as documentation or bug fixes.</p>
+          <p>Start by reading contribution guides, choosing a beginner-friendly project, and working on small issues
+            such as documentation or bug fixes.</p>
         </div>
 
         <div class="card">
           <h4>How do I choose a project to contribute to?</h4>
-          <p>Pick projects that match your interests and skill level. Look for repositories with labels like “good first issue” or “help wanted”.</p>
+          <p>Pick projects that match your interests and skill level. Look for repositories with labels like “good first
+            issue” or “help wanted”.</p>
         </div>
 
         <div class="card">
           <h4>What are the benefits of contributing to open source?</h4>
-          <p>Contributing helps you build a portfolio, improve technical skills, collaborate globally, and gain real-world development experience.</p>
+          <p>Contributing helps you build a portfolio, improve technical skills, collaborate globally, and gain
+            real-world development experience.</p>
         </div>
 
         <div class="card">
           <h4>Where can I ask for help?</h4>
-          <p>Most projects have active communities on GitHub, Discord, or Slack. Asking questions is encouraged and is part of open-source culture.</p>
+          <p>Most projects have active communities on GitHub, Discord, or Slack. Asking questions is encouraged and is
+            part of open-source culture.</p>
         </div>
         <div class="card">
-  <h4>How do I find beginner-friendly issues?</h4>
-  <p>
-    Look for repositories with labels like <strong>good first issue</strong>,
-    <strong>beginner</strong>, or <strong>help wanted</strong>. These issues are
-    specifically curated for new contributors.
-  </p>
-</div>
+          <h4>How do I find beginner-friendly issues?</h4>
+          <p>
+            Look for repositories with labels like <strong>good first issue</strong>,
+            <strong>beginner</strong>, or <strong>help wanted</strong>. These issues are
+            specifically curated for new contributors.
+          </p>
+        </div>
 
-<div class="card">
-  <h4>What is a “good first issue”?</h4>
-  <p>
-    A good first issue is a small, well-defined task that helps beginners
-    understand the project without deep knowledge of the entire codebase.
-  </p>
-</div>
+        <div class="card">
+          <h4>What is a “good first issue”?</h4>
+          <p>
+            A good first issue is a small, well-defined task that helps beginners
+            understand the project without deep knowledge of the entire codebase.
+          </p>
+        </div>
 
-<div class="card">
-  <h4>Do I need to know Git before contributing?</h4>
-  <p>
-    Basic Git knowledge is helpful, but not mandatory. Many projects provide
-    step-by-step contribution guides, and you can learn Git basics as you go.
-  </p>
-</div>
+        <div class="card">
+          <h4>Do I need to know Git before contributing?</h4>
+          <p>
+            Basic Git knowledge is helpful, but not mandatory. Many projects provide
+            step-by-step contribution guides, and you can learn Git basics as you go.
+          </p>
+        </div>
 
-<div class="card">
-  <h4>How should I communicate with maintainers?</h4>
-  <p>
-    Be polite, clear, and patient. Use GitHub issues or discussions to ask
-    questions, describe your approach, and seek feedback before starting work.
-  </p>
-</div>
+        <div class="card">
+          <h4>How should I communicate with maintainers?</h4>
+          <p>
+            Be polite, clear, and patient. Use GitHub issues or discussions to ask
+            questions, describe your approach, and seek feedback before starting work.
+          </p>
+        </div>
 
-<div class="card">
-  <h4>What should I do if my pull request is rejected?</h4>
-  <p>
-    Don’t be discouraged. Read the feedback carefully, make the suggested
-    changes, or ask for clarification. Rejections are a normal part of learning
-    open source.
-  </p>
-</div>
+        <div class="card">
+          <h4>What should I do if my pull request is rejected?</h4>
+          <p>
+            Don’t be discouraged. Read the feedback carefully, make the suggested
+            changes, or ask for clarification. Rejections are a normal part of learning
+            open source.
+          </p>
+        </div>
 
       </div>
     </section>
   </main>
 
-<div id="footer"></div>
+  <div id="footer"></div>
 
 
 
   <script src="../js/components.js"></script>
-  
+
   <script src="../js/theme.js"></script>
-  
+
   <script src="../js/chatbot.js"></script>
   <script src="../js/main.js"></script>
 
   <button id="scrollTopBtn" title="Back to Top">
-   <i class="fas fa-chevron-up"></i>
+    <i class="fas fa-chevron-up"></i>
   </button>
   <script src="/frontend/js/DMtheme.js"></script>
   <script src='../js/pwa.js'></script>
+  <script src="../js/pr-generator.js"></script>
 </body>
+
 </html>

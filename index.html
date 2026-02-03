@@ -18,261 +18,277 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="frontend/css/style.css" />
   <link rel="stylesheet" href="frontend/css/home.css" />
+  <link rel="stylesheet" href="frontend/css/pr-generator.css" />
 </head>
 
 
-  <style>
-    #scrollTopBtn {
-      display: flex !important;
-      /* Enables Flexbox centering */
-      justify-content: center !important;
-      /* Horizontally center */
-      align-items: center !important;
-      /* Vertically center */
-      padding: 0 !important;
-      /* Remove padding that offsets the icon */
-      line-height: 0 !important;
-      /* Reset line height for precise icons */
-    }
-    /* Container to center the entire grid */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-      justify-content: center; /* Centers the grid itself */
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    /* Container Layout */
-    .card-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 40px;
-        max-width: 1200px;
-        margin: 60px auto;
-        padding: 0 20px;
-        justify-content: center; /* Centers the grid on the page */
-    }
+<style>
+  #scrollTopBtn {
+    display: flex !important;
+    /* Enables Flexbox centering */
+    justify-content: center !important;
+    /* Horizontally center */
+    align-items: center !important;
+    /* Vertically center */
+    padding: 0 !important;
+    /* Remove padding that offsets the icon */
+    line-height: 0 !important;
+    /* Reset line height for precise icons */
+  }
 
-    /* Card Core Design */
-    .card {
-        background: #ffffff;
-        border: 1px solid #e2d1a8;
-        border-radius: 20px;
-        padding: 50px 30px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;    /* Centers internal items horizontally */
-        text-align: center;      /* Centers the text lines */
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        height: 100%;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    }
+  /* Container to center the entire grid */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    /* Centers the grid itself */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    /* Golden Glow Hover Effect */
-    .card:hover {
-        transform: translateY(-10px);
-        border-color: #b59d5c;
-        box-shadow: 0 20px 40px rgba(181, 157, 92, 0.2) !important;
-    }
+  /* Container Layout */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    justify-content: center;
+    /* Centers the grid on the page */
+  }
 
-    /* Icon Centering */
-    .card-icon {
-        font-size: 3rem;
-        color: #b59d5c;
-        margin-bottom: 25px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  /* Card Core Design */
+  .card {
+    background: #ffffff;
+    border: 1px solid #e2d1a8;
+    border-radius: 20px;
+    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers internal items horizontally */
+    text-align: center;
+    /* Centers the text lines */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  }
 
-    /* Typography */
-    .card h4 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.5rem;
-        color: #1a1a1a;
-        margin-bottom: 15px;
-    }
+  /* Golden Glow Hover Effect */
+  .card:hover {
+    transform: translateY(-10px);
+    border-color: #b59d5c;
+    box-shadow: 0 20px 40px rgba(181, 157, 92, 0.2) !important;
+  }
 
-    .card p {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.95rem;
-        color: #555;
-        line-height: 1.7;
-        margin-bottom: 30px;
-        flex-grow: 1; /* Pushes the badge to the bottom for row alignment */
-    }
+  /* Icon Centering */
+  .card-icon {
+    font-size: 3rem;
+    color: #b59d5c;
+    margin-bottom: 25px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    /* Badge Styling */
-    .badge {
-        background: #b59d5c;
-        color: #fff;
-        padding: 10px 30px;
-        border-radius: 30px;
-        font-weight: 600;
-        font-size: 0.85rem;
-        box-shadow: 0 4px 10px rgba(181, 157, 92, 0.3);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    /* Individual Card Centering */
-    .program-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;    /* Centers internal elements horizontally */
-      text-align: center;      /* Centers text within elements */
-      height: 100%;
-      padding: 40px 30px;
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 20px;
-      transition: var(--card-transition);
-    }
+  /* Typography */
+  .card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    margin-bottom: 15px;
+  }
 
-    /* Icon Area Centering */
-    .program-icon {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-gold);
-    }
+  .card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    /* Pushes the badge to the bottom for row alignment */
+  }
 
-    /* Pushing Button to Bottom for Alignment */
-    .program-card .card-btn {
-      margin-top: auto; /* Aligns buttons across a row */
-    }
+  /* Badge Styling */
+  .badge {
+    background: #b59d5c;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(181, 157, 92, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-    /* --- FEATURE: Golden Glow Hover Effect for Legendary Cards --- */
-    #programs .card {
-      transition: all 0.3s ease-in-out;
-    }
+  /* Individual Card Centering */
+  .program-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers internal elements horizontally */
+    text-align: center;
+    /* Centers text within elements */
+    height: 100%;
+    padding: 40px 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    transition: var(--card-transition);
+  }
 
-    #programs .card:hover {
-      /* Golden/Yellow Glow */
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6) !important;
-      /* Lift effect */
-      transform: translateY(-5px);
-      /* Gold border */
-      border-color: rgba(255, 215, 0, 0.8) !important;
-    }
-    
-    /* --- NEW: Golden Glow Hover Effect for Milestone Stats Cards --- */
-    .stats .stat-card {
-      transition: all 0.3s ease-in-out;
-      border-radius: 12px; /* Ensures glow follows rounded corners if present */
-    }
+  /* Icon Area Centering */
+  .program-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-gold);
+  }
 
-    .stats .stat-card:hover {
-      /* Stronger Golden Glow from the back */
-      box-shadow: 0 0 40px rgba(255, 215, 0, 0.5) !important;
-      transform: translateY(-5px);
-      z-index: 2; /* Ensures it pops out above neighbors */
-    }
+  /* Pushing Button to Bottom for Alignment */
+  .program-card .card-btn {
+    margin-top: auto;
+    /* Aligns buttons across a row */
+  }
 
-    /* --- FIX: Timeline Z-Index Layering --- */
-    /* This ensures the golden icons sit ON TOP of the connecting vertical line */
-    .compass-step .compass-icon {
-      position: relative;
-      z-index: 10;
-    }
+  /* --- FEATURE: Golden Glow Hover Effect for Legendary Cards --- */
+  #programs .card {
+    transition: all 0.3s ease-in-out;
+  }
 
-    /* Ensure the timeline line stays in the back */
-    .compass-timeline {
-      position: relative;
-      z-index: 1;
-    }
+  #programs .card:hover {
+    /* Golden/Yellow Glow */
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6) !important;
+    /* Lift effect */
+    transform: translateY(-5px);
+    /* Gold border */
+    border-color: rgba(255, 215, 0, 0.8) !important;
+  }
 
-    /* Base hidden state */
-    .why-journey {
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 40px;
-    }
+  /* --- NEW: Golden Glow Hover Effect for Milestone Stats Cards --- */
+  .stats .stat-card {
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px;
+    /* Ensures glow follows rounded corners if present */
+  }
 
-    /* Horizontal timeline line */
-    .journey-line {
-      position: absolute;
-      top: 40%;
-      left: 8%;
-      width: 84%;
-      height: 3px;
-      background: linear-gradient(to right, #d4af37, #f5d76e);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 1.2s ease;
-      z-index: 1;
-    }
+  .stats .stat-card:hover {
+    /* Stronger Golden Glow from the back */
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.5) !important;
+    transform: translateY(-5px);
+    z-index: 2;
+    /* Ensures it pops out above neighbors */
+  }
 
-    /* Steps initially hidden */
-    .journey-steps {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
+  /* --- FIX: Timeline Z-Index Layering --- */
+  /* This ensures the golden icons sit ON TOP of the connecting vertical line */
+  .compass-step .compass-icon {
+    position: relative;
+    z-index: 10;
+  }
 
-    .journey-step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      min-width: 120px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
+  /* Ensure the timeline line stays in the back */
+  .compass-timeline {
+    position: relative;
+    z-index: 1;
+  }
 
-    .journey-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 50%;
-      background: #d4af37;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      margin-bottom: 12px;
+  /* Base hidden state */
+  .why-journey {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
 
-      /* THIS ensures perfect centering */
-      position: relative;
-      z-index: 3;
-    }
+  /* Horizontal timeline line */
+  .journey-line {
+    position: absolute;
+    top: 40%;
+    left: 8%;
+    width: 84%;
+    height: 3px;
+    background: linear-gradient(to right, #d4af37, #f5d76e);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.2s ease;
+    z-index: 1;
+  }
 
-    /* Activated state */
-    .why-journey.is-visible .journey-line {
-      transform: scaleX(1);
-    }
+  /* Steps initially hidden */
+  .journey-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
 
-    .why-journey.is-visible .journey-step {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+  .journey-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 120px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
 
-    .why-journey.is-visible .journey-icon {
-      box-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
-      transition: box-shadow 0.6s ease;
-    }
-    /* Sequential reveal */
-    .journey-step:nth-child(1) {
-      transition-delay: 0.3s;
-    }
-    .journey-step:nth-child(2) {
-      transition-delay: 0.6s;
-    }
-    .journey-step:nth-child(3) {
-      transition-delay: 0.9s;
-    }
+  .journey-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #d4af37;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
 
-      </style>
-  <link rel="stylesheet" href="frontend/css/recommendations.css" />
+    /* THIS ensures perfect centering */
+    position: relative;
+    z-index: 3;
+  }
+
+  /* Activated state */
+  .why-journey.is-visible .journey-line {
+    transform: scaleX(1);
+  }
+
+  .why-journey.is-visible .journey-step {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .why-journey.is-visible .journey-icon {
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
+    transition: box-shadow 0.6s ease;
+  }
+
+  /* Sequential reveal */
+  .journey-step:nth-child(1) {
+    transition-delay: 0.3s;
+  }
+
+  .journey-step:nth-child(2) {
+    transition-delay: 0.6s;
+  }
+
+  .journey-step:nth-child(3) {
+    transition-delay: 0.9s;
+  }
+</style>
+<link rel="stylesheet" href="frontend/css/recommendations.css" />
 
 </head>
 
@@ -497,31 +513,31 @@
 
 
     <div></div>
-   </section>
-    </section>
+  </section>
+  </section>
 
-    </div>
-</section>
-<section id=" opensource-video" style="padding: 60px 20px; text-align: center;">
-      <span class="programs-eyebrow"
-        style="display: block; margin-bottom: 10px; color: #ffca28; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">
-        Start Your Journey
-      </span>
-      <h3>🎥 Video for Beginners</h3>
-      <p style="margin-bottom: 30px;">Learn the workflow: Fork, Clone, Commit, and Push.</p>
+  </div>
+  </section>
+  <section id=" opensource-video" style="padding: 60px 20px; text-align: center;">
+    <span class="programs-eyebrow"
+      style="display: block; margin-bottom: 10px; color: #ffca28; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">
+      Start Your Journey
+    </span>
+    <h3>🎥 Video for Beginners</h3>
+    <p style="margin-bottom: 30px;">Learn the workflow: Fork, Clone, Commit, and Push.</p>
 
-      <div class="video-thumbnail-container" style="
+    <div class="video-thumbnail-container" style="
     max-width: 900px;
     margin: 30px auto;
     position: relative;
     aspect-ratio: 16 / 9;
   ">
-        <iframe src="https://www.youtube.com/embed/3dGzOWWb0Eo" style="width:100%; height:100%;"
-          title="Open Source Contribution for Beginners" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
+      <iframe src="https://www.youtube.com/embed/3dGzOWWb0Eo" style="width:100%; height:100%;"
+        title="Open Source Contribution for Beginners" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
   <!-- Programs Section -->
@@ -971,6 +987,7 @@
 <script src="frontend/js/theme.js"></script>
 <script src="frontend/js/home.js"></script>
 <script src="frontend/js/pwa.js"></script>
+<script src="frontend/js/pr-generator.js"></script>
 </body>
 
 </html>

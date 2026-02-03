@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/navigation.css" />
+     <link rel="stylesheet" href="../../css/navigation.css" />
     <!-- Font Awesome (REQUIRED for logo) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
@@ -38,7 +38,48 @@
                 linear-gradient(135deg, var(--warm-cream), #cbce9380);
             color: #ffffff;
         }
+        body.dark-mode .gsoc-hero {
+    background:
+        /* soft gold radial glow on top */
+        radial-gradient(circle at top,
+            rgba(228, 199, 106, 0.28),
+            transparent 45%),
+        /* deep-navy gradient base */
+        linear-gradient(135deg, var(--deep-navy), #0f172a);
+    color: var(--text-primary); /* readable text on dark bg */
+}
 
+        body.dark-mode .gsoc-badge {
+    background: rgba(228, 199, 106, 0.15); /* soft gold glow */
+    color: var(--primary-gold); /* gold text on dark bg */
+}
+
+body.dark-mode .gsoc-title {
+    color: var(--primary-gold); /* title in gold */
+}
+
+body.dark-mode .gsoc-title span {
+    color: var(--secondary-gold); /* highlight span in secondary gold */
+}
+
+body.dark-mode .gsoc-tagline {
+    color: var(--text-secondary); /* softer text on dark bg */
+}
+
+body.dark-mode .gsoc-cta {
+    color: var(--deep-navy); /* text contrast for gold background */
+    background: linear-gradient(
+        135deg,
+        var(--primary-gold),
+        var(--secondary-gold)
+    );
+    box-shadow: var(--shadow-main);
+}
+
+body.dark-mode .gsoc-cta:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
 
 
         /* Soft animated glow */
@@ -177,11 +218,20 @@
             text-align: center;
         }
 
+        body.dark-mode .gsoc-snapshot {
+            background: linear-gradient(180deg,
+                    var(--light-parchment),
+                    var(--deep-navy));
+        }
 
         .snapshot-header h2 {
             font-size: clamp(2rem, 4vw, 2.6rem);
             font-weight: 800;
             color: var(--deep-navy);
+        }
+
+        body.dark-mode .snapshot-header h2 {
+            color: var(--text-primary);
         }
 
         .snapshot-header p {
@@ -209,7 +259,12 @@
             box-shadow: var(--shadow-main);
             transition: all 0.45s var(--bounce-curve);
             overflow: hidden;
-            z-index: 1;
+        }
+
+        body.dark-mode .snapshot-card {
+            background: linear-gradient(180deg,
+                    var(--light-parchment),
+                    var(--deep-navy));
         }
 
         .snapshot-card::before {
@@ -261,6 +316,10 @@
             font-weight: 700;
             margin-bottom: 0.4rem;
             color: var(--deep-navy);
+        }
+
+        body.dark-mode .snapshot-card h3 {
+            color: var(--text-primary);
         }
 
         .snapshot-card p {
@@ -322,6 +381,11 @@
                     var(--light-parchment));
         }
 
+        body.dark-mode .gsoc-journey {
+            background: linear-gradient(180deg,
+                    var(--deep-navy),
+                    var(--light-parchment));
+        }
 
         .journey-header {
             text-align: center;
@@ -333,6 +397,10 @@
             font-size: clamp(2rem, 4vw, 2.7rem);
             font-weight: 800;
             color: var(--deep-navy);
+        }
+
+        body.dark-mode .journey-header h2 {
+            color: var(--text-primary);
         }
 
         .journey-header p {
@@ -406,6 +474,12 @@
             overflow: hidden;
         }
 
+        body.dark-mode .journey-card {
+            background: linear-gradient(180deg,
+                    var(--light-parchment),
+                    var(--deep-navy));
+        }
+
         .journey-card::before {
             content: "";
             position: absolute;
@@ -433,6 +507,9 @@
             margin-bottom: 0.4rem;
         }
 
+        body.dark-mode .journey-card h3 {
+            color: var(--text-primary);
+        }
 
         .journey-card p {
             font-size: 0.95rem;
@@ -492,15 +569,17 @@
             }
         }
 
-        /* ============================
-   IMPROVED PHASES SECTION
-============================ */
-
         .gsoc-phases {
             padding: 7rem 6%;
             background: linear-gradient(180deg,
                     var(--light-parchment),
                     var(--warm-cream));
+        }
+
+        body.dark-mode .gsoc-phases {
+            background: linear-gradient(180deg,
+                    var(--deep-navy),
+                    var(--light-parchment));
         }
 
         .phases-header {
@@ -515,187 +594,114 @@
             color: var(--deep-navy);
         }
 
+        body.dark-mode .phases-header h2 {
+            color: var(--text-primary);
+        }
+
         .phases-header p {
             margin-top: 0.9rem;
             color: var(--text-secondary);
             font-size: 1rem;
         }
 
-        /* IMPROVED Grid Layout */
         .phases-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.6rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        /* IMPROVED Phase Card */
         .phase-card {
             position: relative;
-            padding: 2.4rem 2rem;
-            border-radius: 20px;
+            padding: 2.2rem 2.3rem;
+            border-radius: 22px;
+
             background: linear-gradient(180deg,
                     #ffffff,
                     var(--light-parchment));
+
             box-shadow: var(--shadow-main);
-            transition: all 0.4s var(--bounce-curve);
-            overflow: visible;
-            z-index: 1;
+            transition: all 0.45s var(--bounce-curve);
+            overflow: hidden;
         }
 
-        /* IMPROVED Top accent bar with gradient */
+        body.dark-mode .phase-card {
+            background: linear-gradient(180deg,
+                    var(--light-parchment),
+                    var(--deep-navy));
+        }
+
         .phase-card::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, 
-                var(--primary-gold),
-                var(--secondary-gold));
-            border-radius: 20px 20px 0 0;
-            transition: all 0.3s ease;
-        }
+            inset: 0;
 
-        .phase-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-hover);
+            background: radial-gradient(circle at top right,
+                    rgba(212, 175, 55, 0.22),
+                    transparent 60%);
+
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .phase-card:hover::before {
-            height: 8px;
+            opacity: 1;
         }
 
-        /* IMPROVED Phase Badge - Larger and more prominent */
+        .phase-card:hover {
+            transform: translateY(-10px) scale(1.035);
+            box-shadow: var(--shadow-hover);
+        }
+
         .phase-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
-            color: #1a1a1a;
-            border-radius: 50%;
-            font-size: 1.1rem;
-            font-weight: 800;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
-            transition: transform 0.35s var(--bounce-curve);
-        }
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
 
-        .phase-card:hover .phase-badge {
-            transform: scale(1.15) rotate(10deg);
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--primary-gold);
+
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
         }
 
         .phase-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: var(--deep-navy);
-            margin-bottom: 0.6rem;
-            line-height: 1.3;
+        }
+
+        body.dark-mode .phase-card h3 {
+            color: var(--text-primary);
         }
 
         .phase-time {
-            margin: 0 0 1.2rem 0;
-            font-size: 0.9rem;
-            color: var(--primary-gold);
-            display: block;
-            font-weight: 700;
-        }
-
-        /* IMPROVED Brief description visible */
-        .phase-brief {
-            font-size: 0.95rem;
-            line-height: 1.6;
+            margin: 0.4rem 0 1.1rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-bottom: 1.2rem;
-        }
-
-        /* IMPROVED Collapsible details */
-        .phase-card details {
-            margin-top: 1rem;
-        }
-
-        .phase-card summary {
-            cursor: pointer;
-            font-weight: 700;
-            color: var(--primary-gold);
-            font-size: 0.95rem;
-            padding: 10px 14px;
-            background: linear-gradient(135deg, 
-                rgba(212, 175, 55, 0.12),
-                rgba(212, 175, 55, 0.06));
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            list-style: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .phase-card summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .phase-card summary::before {
-            content: '▼';
-            font-size: 0.75rem;
-            transition: transform 0.3s ease;
-            display: inline-block;
-        }
-
-        .phase-card details[open] summary::before {
-            transform: rotate(-180deg);
-        }
-
-        .phase-card summary:hover {
-            background: linear-gradient(135deg, 
-                rgba(212, 175, 55, 0.22),
-                rgba(212, 175, 55, 0.12));
-            transform: translateX(4px);
         }
 
         .phase-card ul {
-            padding: 1rem 0 0 0;
-            list-style: none;
-            margin: 0;
+            padding-left: 1.1rem;
         }
 
         .phase-card li {
             font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 0.8rem;
+            line-height: 1.65;
+            margin-bottom: 0.6rem;
             color: var(--charcoal-dark);
-            padding: 8px 0 8px 28px;
-            position: relative;
-            transition: transform 0.2s ease;
         }
 
-        .phase-card li:hover {
-            transform: translateX(4px);
+        body.dark-mode .phase-card li {
+            color: var(--text-secondary);
         }
 
-        .phase-card ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary-gold);
-            font-weight: 800;
-            font-size: 1rem;
-        }
-
-        .phase-card ul li strong {
-            color: var(--deep-navy);
-            font-weight: 700;
-        }
-
-        /* Animations */
         .phase-card {
             opacity: 0;
-            transform: translateY(30px);
-            animation: phaseReveal 0.8s ease forwards;
+            transform: translateY(36px);
+            animation: phaseReveal 0.9s ease forwards;
         }
 
         .phase-card:nth-child(1) {
@@ -722,6 +728,12 @@
             animation-delay: 0.6s;
         }
 
+        
+
+        /* ---------- Process Stepper ---------- */
+        .process-stepper {
+            padding: 80px 8%;
+            background-color: var(--white);
         @keyframes phaseReveal {
             to {
                 opacity: 1;
@@ -729,44 +741,24 @@
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 968px) {
-            .phases-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
         @media (max-width: 640px) {
-            .gsoc-phases {
-                padding: 5rem 5%;
-            }
-
-            .phases-grid {
-                grid-template-columns: 1fr;
-                gap: 1.8rem;
-            }
-
             .phase-card {
-                padding: 2rem 1.6rem;
-            }
-
-            .phase-card h3 {
-                font-size: 1.3rem;
+                padding: 1.8rem;
             }
         }
-
-        /* Rest of the styles remain the same... */
 
         .gsoc-stipend {
             padding: 7rem 6%;
             background: linear-gradient(180deg,
                     var(--warm-cream),
                     var(--light-parchment));
-            position: relative;
-            z-index: 2;
         }
 
+        body.dark-mode .gsoc-stipend {
+            background: linear-gradient(180deg,
+                    var(--deep-navy),
+                    var(--light-parchment));
+        }
 
         .stipend-header {
             max-width: 720px;
@@ -780,7 +772,9 @@
             color: var(--deep-navy);
         }
 
-
+        body.dark-mode .stipend-header h2 {
+            color: var(--text-primary);
+        }
 
         .stipend-header p {
             margin-top: 0.9rem;
@@ -788,84 +782,82 @@
             font-size: 1rem;
         }
 
-        .stipend-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
         .stipend-card {
             position: relative;
-            padding: 2.6rem 2.4rem;
-            border-radius: 28px;
-            background: var(--warm-cream);
-            box-shadow:
-                0 6px 24px rgba(0, 0, 0, 0.08),
-                0 12px 48px rgba(0, 0, 0, 0.05);
-            transition: transform 0.35s var(--bounce-curve),
-                box-shadow 0.35s ease,
-                background 0.4s ease;
+            padding: 2.4rem 2.3rem;
+            border-radius: 22px;
+
+            background: linear-gradient(180deg,
+                    #ffffff,
+                    var(--light-parchment));
+
+            box-shadow: var(--shadow-main);
+            transition: all 0.45s var(--bounce-curve);
             overflow: hidden;
         }
 
-        .stipend-card::before {
-            content: '';
-            position: absolute;
-            top: -30px;
-            left: -30px;
-            width: 120%;
-            height: 60px;
-            background: linear-gradient(90deg,
-                    var(--primary-gold),
-                    var(--secondary-gold));
-            filter: blur(30px);
-            opacity: 0.4;
-            border-radius: 50%;
-            pointer-events: none;
+        body.dark-mode .stipend-card {
+            background: linear-gradient(180deg,
+                    var(--light-parchment),
+                    var(--deep-navy));
         }
 
+        .stipend-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background: radial-gradient(circle at top left,
+                    rgba(212, 175, 55, 0.22),
+                    transparent 60%);
+
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stipend-card:hover::before {
+            opacity: 1;
+        }
 
         .stipend-card:hover {
-            transform: translateY(-12px) scale(1.06);
+            transform: translateY(-10px) scale(1.04);
             box-shadow: var(--shadow-hover);
         }
 
         .stipend-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 18px;
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+
             background: linear-gradient(135deg,
                     var(--primary-gold),
                     var(--secondary-gold));
+
             color: #1a1a1a;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.6rem;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-            transition: transform 0.35s var(--bounce-curve);
-        }
+            justify-content: center;
 
-        .stipend-card:hover .stipend-icon {
-            transform: scale(1.15) rotate(5deg);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-main);
+            margin-bottom: 1.4rem;
         }
 
         .stipend-card h3 {
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             font-weight: 800;
-            margin-bottom: 0.9rem;
-            color: var(--charcoal-dark);
+            color: var(--deep-navy);
+        }
+
+        body.dark-mode .stipend-card h3 {
+            color: var(--text-primary);
         }
 
         .stipend-desc {
-            font-size: 1rem;
-            line-height: 1.65;
-            margin-bottom: 1rem;
+            margin: 0.6rem 0 1.2rem;
+            font-size: 0.95rem;
             color: var(--text-secondary);
+            line-height: 1.65;
         }
 
         .stipend-list {
@@ -873,33 +865,14 @@
         }
 
         .stipend-list li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
             font-size: 0.95rem;
+            line-height: 1.6;
             color: var(--charcoal-dark);
-            opacity: 0;
-            transform: translateY(10px);
-            animation: listFadeIn 0.5s forwards;
         }
 
-
-
-        .stipend-list li:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-
-        .stipend-list li:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .stipend-list li:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-
-        @keyframes listFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        body.dark-mode .stipend-list li {
+            color: var(--text-secondary);
         }
 
         .stipend-card.highlight {
@@ -931,24 +904,160 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .stipend-grid {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-        }
-
         @media (max-width: 640px) {
             .stipend-card {
                 padding: 1.9rem;
             }
         }
 
+        .stipend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Card Base */
+        .stipend-card {
+            position: relative;
+            padding: 2.6rem 2.4rem;
+            border-radius: 28px;
+            background: var(--warm-cream);
+            box-shadow:
+                0 6px 24px rgba(0, 0, 0, 0.08),
+                0 12px 48px rgba(0, 0, 0, 0.05);
+            transition: transform 0.35s var(--bounce-curve),
+                box-shadow 0.35s ease,
+                background 0.4s ease;
+            overflow: hidden;
+        }
+
+        /* Gold Top Glow */
+        .stipend-card::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 120%;
+            height: 60px;
+            background: linear-gradient(90deg,
+                    var(--primary-gold),
+                    var(--secondary-gold));
+            filter: blur(30px);
+            opacity: 0.4;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Dark mode enhancements */
+        body.dark-mode .stipend-card {
+            background: var(--deep-navy);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.55),
+                0 16px 64px rgba(0, 0, 0, 0.35);
+        }
+
+        body.dark-mode .stipend-card::before {
+            opacity: 0.3;
+        }
+
+        /* Hover Animation */
+        .stipend-card:hover {
+            transform: translateY(-12px) scale(1.06);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Icon Styling */
+        .stipend-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: linear-gradient(135deg,
+                    var(--primary-gold),
+                    var(--secondary-gold));
+            color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.6rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition: transform 0.35s var(--bounce-curve);
+        }
+
+        .stipend-card:hover .stipend-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        /* Text & List */
+        .stipend-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            margin-bottom: 0.9rem;
+            color: var(--charcoal-dark);
+        }
+
+        body.dark-mode .stipend-card h3 {
+            color: var(--text-primary);
+        }
+
+        .stipend-desc {
+            font-size: 1rem;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        body.dark-mode .stipend-desc {
+            color: var(--text-secondary);
+        }
+
+        .stipend-list li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--charcoal-dark);
+            opacity: 0;
+            transform: translateY(10px);
+            animation: listFadeIn 0.5s forwards;
+        }
+
+        body.dark-mode .stipend-list li {
+            color: var(--text-secondary);
+        }
+
+        .stipend-list li:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .stipend-list li:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .stipend-list li:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes listFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container */
         .gsoc-eligibility {
             padding: 6rem 6% 5rem;
             background: var(--light-parchment);
         }
 
+        body.dark-mode .gsoc-eligibility {
+            background: var(--deep-navy);
+            color: var(--text-primary);
+        }
+
+        /* Header */
         .eligibility-header {
             text-align: center;
             margin-bottom: 3.5rem;
@@ -960,12 +1069,21 @@
             color: var(--charcoal-dark);
         }
 
+        body.dark-mode .eligibility-header h2 {
+            color: var(--primary-gold);
+        }
+
         .eligibility-header p {
             font-size: 1.05rem;
             color: var(--text-secondary);
             margin-top: 0.6rem;
         }
 
+        body.dark-mode .eligibility-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Grid Layout */
         .eligibility-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -974,6 +1092,7 @@
             margin: 0 auto;
         }
 
+        /* Card */
         .eligibility-card {
             background: linear-gradient(180deg, var(--warm-cream), var(--light-parchment));
             border-radius: 22px;
@@ -985,6 +1104,12 @@
             overflow: hidden;
         }
 
+        body.dark-mode .eligibility-card {
+            background: linear-gradient(180deg, var(--deep-navy), var(--light-parchment));
+            box-shadow: var(--shadow-main);
+        }
+
+        /* Icon Circle */
         .eligibility-icon {
             width: 70px;
             height: 70px;
@@ -1009,11 +1134,16 @@
             transform: scale(1.15) rotate(10deg);
         }
 
+        /* Card Text */
         .eligibility-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.9rem;
             color: var(--charcoal-dark);
+        }
+
+        body.dark-mode .eligibility-card h3 {
+            color: var(--primary-gold);
         }
 
         .eligibility-card p {
@@ -1022,6 +1152,11 @@
             color: var(--text-secondary);
         }
 
+        body.dark-mode .eligibility-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Subtle card fade-in animation */
         .eligibility-card {
             opacity: 0;
             transform: translateY(20px);
@@ -1051,11 +1186,18 @@
             }
         }
 
+        /* Container */
         .gsoc-prepare {
             padding: 6rem 6% 5rem;
             background: var(--warm-cream);
         }
 
+        body.dark-mode .gsoc-prepare {
+            background: var(--deep-navy);
+            color: var(--text-primary);
+        }
+
+        /* Header */
         .prepare-header {
             text-align: center;
             margin-bottom: 3.5rem;
@@ -1067,12 +1209,21 @@
             color: var(--charcoal-dark);
         }
 
+        body.dark-mode .prepare-header h2 {
+            color: var(--primary-gold);
+        }
+
         .prepare-header p {
             font-size: 1.05rem;
             color: var(--text-secondary);
             margin-top: 0.6rem;
         }
 
+        body.dark-mode .prepare-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Grid Layout */
         .prepare-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1081,6 +1232,7 @@
             margin: 0 auto;
         }
 
+        /* Card */
         .prepare-card {
             background: linear-gradient(180deg, var(--light-parchment), var(--warm-cream));
             border-radius: 22px;
@@ -1092,6 +1244,12 @@
             overflow: hidden;
         }
 
+        body.dark-mode .prepare-card {
+            background: linear-gradient(180deg, var(--light-parchment), var(--deep-navy));
+            box-shadow: var(--shadow-main);
+        }
+
+        /* Icon Circle */
         .prepare-icon {
             width: 70px;
             height: 70px;
@@ -1116,11 +1274,16 @@
             transform: scale(1.15) rotate(10deg);
         }
 
+        /* Card Text */
         .prepare-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.9rem;
             color: var(--charcoal-dark);
+        }
+
+        body.dark-mode .prepare-card h3 {
+            color: var(--primary-gold);
         }
 
         .prepare-card p {
@@ -1129,6 +1292,11 @@
             color: var(--text-secondary);
         }
 
+        body.dark-mode .prepare-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Subtle card fade-in animation */
         .prepare-card {
             opacity: 0;
             transform: translateY(20px);
@@ -1158,11 +1326,18 @@
             }
         }
 
+        /* Container */
         .gsoc-resources {
             padding: 6rem 6% 5rem;
             background: var(--light-parchment);
         }
 
+        body.dark-mode .gsoc-resources {
+            background: var(--warm-cream);
+            color: var(--text-primary);
+        }
+
+        /* Header */
         .resources-header {
             text-align: center;
             margin-bottom: 3.5rem;
@@ -1174,12 +1349,21 @@
             color: var(--charcoal-dark);
         }
 
+        body.dark-mode .resources-header h2 {
+            color: var(--primary-gold);
+        }
+
         .resources-header p {
             font-size: 1.05rem;
             color: var(--text-secondary);
             margin-top: 0.6rem;
         }
 
+        body.dark-mode .resources-header p {
+            color: var(--text-secondary);
+        }
+
+        /* Grid Layout */
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1188,6 +1372,104 @@
             margin: 0 auto;
         }
 
+        /* Card */
+        .resource-card {
+            display: block;
+            background: linear-gradient(180deg, var(--warm-cream), var(--light-parchment));
+            border-radius: 22px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-main);
+            text-decoration: none;
+            color: var(--charcoal-dark);
+            text-align: center;
+            transition: transform 0.35s var(--bounce-curve), box-shadow 0.35s ease, background 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .resource-card {
+            background: linear-gradient(180deg, var(--deep-navy), var(--light-parchment));
+            color: var(--text-primary);
+            box-shadow: var(--shadow-main);
+        }
+
+        /* Icon Circle */
+        .resource-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.6rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #1a1a1a;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition: transform 0.35s var(--bounce-curve);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .resource-card:hover .resource-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* Card Text */
+        .resource-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.9rem;
+        }
+
+        body.dark-mode .resource-card h3 {
+            color: var(--primary-gold);
+        }
+
+        .resource-card p {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        body.dark-mode .resource-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Subtle fade-in animation */
+        .resource-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: resourceFadeIn 0.6s forwards;
+        }
+
+        .resource-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .resource-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .resource-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .resource-card:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes resourceFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Resource Card */
         .resource-card {
             display: flex;
             flex-direction: column;
@@ -1199,10 +1481,82 @@
             text-align: center;
             transition: transform 0.35s var(--bounce-curve), box-shadow 0.35s ease;
             position: relative;
-            text-decoration: none;
-            color: var(--charcoal-dark);
         }
 
+        .features-section {
+  padding: 80px 8%;
+  background-color: var(--light-gray);
+}
+
+.features-section h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.features-section p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 36px;
+  border-radius: 20px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out both;
+  border: 2px solid transparent;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px) rotate(1deg);
+  box-shadow: 0 25px 60px rgba(31, 60, 136, 0.25);
+  border-color: var(--secondary-blue);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--secondary-blue), var(--success-green));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px 5%;
+            }
+        body.dark-mode .resource-card {
+            background: linear-gradient(180deg, var(--deep-navy), var(--light-parchment));
+            color: var(--text-primary);
+        }
+
+        /* Buttons */
         .resource-btn {
             display: inline-flex;
             align-items: center;
@@ -1237,6 +1591,7 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* Icon Circle */
         .resource-icon {
             width: 70px;
             height: 70px;
@@ -1252,10 +1607,15 @@
             transition: transform 0.35s var(--bounce-curve);
         }
 
+        /* Card Text */
         .resource-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.9rem;
+        }
+
+        body.dark-mode .resource-card h3 {
+            color: var(--primary-gold);
         }
 
         .resource-card p {
@@ -1264,6 +1624,11 @@
             color: var(--text-secondary);
         }
 
+        body.dark-mode .resource-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Subtle fade-in animation */
         .resource-card {
             opacity: 0;
             transform: translateY(20px);
@@ -1300,9 +1665,12 @@
             position: relative;
             overflow: hidden;
             color: #0f0f0f;
-            z-index: 2;
         }
 
+        body.dark-mode .gsoc-cta-section {
+            background: linear-gradient(135deg, var(--deep-navy), #141a2b);
+            color: var(--text-primary);
+        }
 
         .cta-container {
             max-width: 900px;
@@ -1367,6 +1735,7 @@
             transform: translateX(6px);
         }
 
+        /* Responsive */
         @media (max-width: 640px) {
             .gsoc-cta-section {
                 padding: 4rem 1rem;
@@ -1382,7 +1751,6 @@
             }
         }
     </style>
-  <link rel='manifest' href='../../../manifest.json' />
 </head>
 
 <body>
@@ -1407,9 +1775,9 @@
             </div>
         </div>
     </header>
-
     <section class="gsoc-hero">
         <div class="gsoc-hero-bg"></div>
+
         <div class="gsoc-hero-content">
             <span class="gsoc-badge">
                 <i class="fas fa-globe"></i>
@@ -1434,7 +1802,6 @@
             </div>
         </div>
     </section>
-
     <section class="gsoc-snapshot">
         <div class="snapshot-header">
             <h2>Program Snapshot</h2>
@@ -1486,6 +1853,87 @@
             <p>A clear step-by-step path from preparation to success</p>
         </div>
 
+    <!-- Why Choose GSoC Section -->
+<section class="features-section">
+  <h2>Why Choose GSoC?</h2>
+  <p>Discover what makes Google Summer of Code a premier open source program for serious contributors</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <div class="feature-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h3>Global Recognition</h3>
+        <p>GSoC is recognized worldwide and adds strong credibility to your developer profile and resume.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <div class="feature-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3>Real-World Open Source</h3>
+        <p>Work on production-grade open source projects used by thousands of developers globally.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <div class="feature-icon">
+          <i class="fas fa-user-tie"></i>
+        </div>
+        <h3>Expert Mentorship</h3>
+        <p>Receive one-on-one mentorship from experienced maintainers and industry professionals.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <div class="feature-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3>Paid Stipend</h3>
+        <p>Earn a competitive stipend while contributing meaningfully to open source projects.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <div class="feature-icon">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <h3>Strong Network</h3>
+        <p>Build long-term connections with global developers, mentors, and open source communities.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-card-content">
+        <div class="feature-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h3>Career Acceleration</h3>
+        <p>Past GSoC contributors often convert experience into full-time roles and internships.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Process Stepper -->
+    <section class="process-stepper">
+        <h2>Your GSoC Journey</h2>
+        <div class="stepper-container">
+            <div class="stepper-line"></div>
+            <div class="stepper-steps">
+                <div class="stepper-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Find Organization</h3>
+                        <div class="step-date">February 19, 2026 onwards</div>
+                        <p>Google announces the official list of mentoring organizations. Shortlist 2-3 organizations that match your tech stack.</p>
+                    </div>
         <div class="journey-stepper">
             <div class="journey-line"></div>
 
@@ -1538,7 +1986,6 @@
             </div>
         </div>
     </section>
-
     <section class="gsoc-phases">
         <div class="phases-header">
             <h2>Program Phases</h2>
@@ -1550,100 +1997,72 @@
 
         <div class="phases-grid">
             <article class="phase-card">
-                <span class="phase-badge">1</span>
+                <span class="phase-badge">Phase 1</span>
                 <h3>Preparation</h3>
-                <p class="phase-time">December – January</p>
-                <p class="phase-brief">Build your "proof of work" before organizations are announced.</p>
-                <details>
-                    <summary>View Key Actions</summary>
-                    <ul>
-                        <li><strong>Master the Tools:</strong> Get proficient with Git and GitHub (forking, branching, PRs)</li>
-                        <li><strong>Build Your Profile:</strong> Make contributions to open-source projects with "good first issue" labels</li>
-                        <li><strong>Identify Your Tech Stack:</strong> Choose your focus area (Web, Systems, AI/ML, Mobile)</li>
-                    </ul>
-                </details>
+                <p class="phase-time">Before organization announcements</p>
+                <ul>
+                    <li>Learn Git & GitHub workflows thoroughly</li>
+                    <li>Make small open-source contributions</li>
+                    <li>Identify your strongest tech stack</li>
+                </ul>
             </article>
 
             <article class="phase-card">
-                <span class="phase-badge">2</span>
+                <span class="phase-badge">Phase 2</span>
                 <h3>Organization Selection</h3>
-                <p class="phase-time">February 19, 2026 onwards</p>
-                <p class="phase-brief">Google announces mentoring organizations. Time to shortlist and engage.</p>
-                <details>
-                    <summary>View Key Actions</summary>
-                    <ul>
-                        <li><strong>Shortlist 2-3 Organizations:</strong> Filter by your tech stack on GSoC website</li>
-                        <li><strong>Join the Community:</strong> Find their Discord/Slack and introduce yourself professionally</li>
-                        <li><strong>Study the Idea List:</strong> Review project proposals and pick ones matching your skills</li>
-                    </ul>
-                </details>
+                <p class="phase-time">Organizations announced</p>
+                <ul>
+                    <li>Shortlist 2–3 organizations only</li>
+                    <li>Join community channels early</li>
+                    <li>Study idea lists and existing codebases</li>
+                </ul>
             </article>
 
             <article class="phase-card">
-                <span class="phase-badge">3</span>
-                <h3>Proposal Period</h3>
-                <p class="phase-time">March 16 – March 31, 2026</p>
-                <p class="phase-brief">Application phase. Submit up to three well-crafted proposals.</p>
-                <details>
-                    <summary>View Key Actions</summary>
-                    <ul>
-                        <li><strong>Draft Early:</strong> Share drafts with mentors for feedback</li>
-                        <li><strong>Synopsis:</strong> 50-word project summary</li>
-                        <li><strong>Technical Breakdown:</strong> Detailed implementation approach</li>
-                        <li><strong>Timeline:</strong> Week-by-week coding plan</li>
-                        <li><strong>Bio:</strong> Your experience and contributions</li>
-                    </ul>
-                </details>
+                <span class="phase-badge">Phase 3</span>
+                <h3>Proposal Writing</h3>
+                <p class="phase-time">Application window</p>
+                <ul>
+                    <li>Draft early and request mentor feedback</li>
+                    <li>Provide technical implementation details</li>
+                    <li>Include a realistic week-by-week timeline</li>
+                </ul>
             </article>
 
             <article class="phase-card">
-                <span class="phase-badge">4</span>
+                <span class="phase-badge">Phase 4</span>
                 <h3>Community Bonding</h3>
-                <p class="phase-time">May 1-24, 2026</p>
-                <p class="phase-brief">Set up your environment and finalize milestones before coding begins.</p>
-                <details>
-                    <summary>View Key Actions</summary>
-                    <ul>
-                        <li><strong>Setup Environment:</strong> Install dependencies and configure dev environment</li>
-                        <li><strong>Meet Your Mentor:</strong> Regular sync meetings and communication channels</li>
-                        <li><strong>Finalize Milestones:</strong> Break down project into weekly deliverables</li>
-                    </ul>
-                </details>
+                <p class="phase-time">Before coding begins</p>
+                <ul>
+                    <li>Set up development environment</li>
+                    <li>Align expectations with mentors</li>
+                    <li>Finalize milestones and deliverables</li>
+                </ul>
             </article>
 
             <article class="phase-card">
-                <span class="phase-badge">5</span>
+                <span class="phase-badge">Phase 5</span>
                 <h3>Coding Period</h3>
-                <p class="phase-time">May 25 onwards - 12-22 weeks</p>
-                <p class="phase-brief">Begin coding with regular mentor feedback and evaluations.</p>
-                <details>
-                    <summary>View Key Actions</summary>
-                    <ul>
-                        <li><strong>Consistent Work:</strong> Daily commits and weekly progress updates</li>
-                        <li><strong>Code Reviews:</strong> Submit clean, documented code for mentor feedback</li>
-                        <li><strong>Mid-term Evaluation:</strong> Demonstrate progress and pass evaluation</li>
-                    </ul>
-                </details>
+                <p class="phase-time">Main program duration</p>
+                <ul>
+                    <li>Work consistently with mentor feedback</li>
+                    <li>Submit evaluations on time</li>
+                    <li>Document progress clearly</li>
+                </ul>
             </article>
 
             <article class="phase-card">
-                <span class="phase-badge">6</span>
+                <span class="phase-badge">Phase 6</span>
                 <h3>Evaluations</h3>
-                <p class="phase-time">Mid-term & Final</p>
-                <p class="phase-brief">Complete evaluations to receive your stipend and certificate.</p>
-                <details>
-                    <summary>View Key Actions</summary>
-                    <ul>
-                        <li><strong>Mid-term:</strong> Submit evaluation demonstrating 50% project completion</li>
-                        <li><strong>Final:</strong> Complete all deliverables and comprehensive documentation</li>
-                        <li><strong>Pass to Receive Stipend:</strong> Meeting deadlines and quality standards</li>
-                    </ul>
-                </details>
+                <p class="phase-time">Mid-term & final</p>
+                <ul>
+                    <li>Demonstrate measurable progress</li>
+                    <li>Submit clean, reviewed code</li>
+                    <li>Complete documentation and reports</li>
+                </ul>
             </article>
         </div>
     </section>
-
-    <!-- All other sections remain the same as paste.txt file... -->
     <section class="gsoc-stipend">
         <div class="stipend-header">
             <h2>Stipend & Commitment</h2>
@@ -1654,6 +2073,7 @@
         </div>
 
         <div class="stipend-grid">
+            <!-- Stipend Card -->
             <div class="stipend-card">
                 <div class="stipend-icon">
                     <i class="fas fa-coins"></i>
@@ -1671,6 +2091,7 @@
                 </ul>
             </div>
 
+            <!-- Commitment Card -->
             <div class="stipend-card">
                 <div class="stipend-icon">
                     <i class="fas fa-clock"></i>
@@ -1687,13 +2108,14 @@
                 </ul>
             </div>
 
+            <!-- Expectations Card -->
             <div class="stipend-card highlight">
                 <div class="stipend-icon">
                     <i class="fas fa-user-check"></i>
                 </div>
-                <h3>What's Expected</h3>
+                <h3>What’s Expected</h3>
                 <p class="stipend-desc">
-                    GSoC is not an internship — it's an open-source commitment.
+                    GSoC is not an internship — it’s an open-source commitment.
                 </p>
 
                 <ul class="stipend-list">
@@ -1704,11 +2126,10 @@
             </div>
         </div>
     </section>
-
     <section class="gsoc-eligibility">
         <div class="eligibility-header">
             <h2>Eligibility & Requirements</h2>
-            <p>Who can apply and what's expected to participate in GSoC</p>
+            <p>Who can apply and what’s expected to participate in GSoC</p>
         </div>
 
         <div class="eligibility-grid">
@@ -1738,7 +2159,6 @@
             </div>
         </div>
     </section>
-
     <section class="gsoc-prepare">
         <div class="prepare-header">
             <h2>How to Prepare for GSoC</h2>
@@ -1771,7 +2191,6 @@
             </div>
         </div>
     </section>
-
     <section class="gsoc-resources">
         <div class="resources-header">
             <h2>Resources & Helpful Links</h2>
@@ -1808,7 +2227,6 @@
             </div>
         </div>
     </section>
-
     <section class="gsoc-cta-section">
         <div class="cta-container">
             <h2>Ready to Kickstart Your GSoC Journey?</h2>
@@ -1820,9 +2238,23 @@
         </div>
     </section>
 
+
+
+
     <div id="footer"></div>
 
+    <script src="../../js/components.js"></script>
+    
+    <script src="../../js/main.js"></script>
+
+    <button id="scrollTopBtn" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="../frontend/js/DMtheme.js"></script>
+
+    <script src="../../js/theme.js"></script>
     <script>
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1836,6 +2268,7 @@
             });
         });
 
+        // Enhanced scroll animations with staggered delays
         const observerOptions = {
             threshold: 0.15,
             rootMargin: '0px 0px -80px 0px'
@@ -1853,14 +2286,26 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.phase-card, .journey-step, .stipend-card').forEach((el, index) => {
+        // Observe elements with enhanced animations
+        document.querySelectorAll(
+  '.feature-card, .timeline-card, .stepper-step, .stipend-card'
+)
+.forEach((el, index) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px) scale(0.95)';
             el.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
             observer.observe(el);
         });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < hero.offsetHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+        });
     </script>
-  <script src='../../js/pwa.js'></script>
 </body>
 
 </html>

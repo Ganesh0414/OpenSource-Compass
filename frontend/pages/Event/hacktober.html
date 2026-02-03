@@ -38,6 +38,10 @@
       transition: all 0.4s ease-in-out;
     }
 
+    body.dark-mode .hero {
+      background: var(--deep-navy);
+      color: var(--text-primary);
+    }
 
     /* Background Glow / Particle Simulation */
     .hero-background {
@@ -330,6 +334,10 @@
       transition: all 0.4s ease-in-out;
     }
 
+    body.dark-mode .about-event {
+      background: var(--light-parchment);
+      color: var(--text-primary);
+    }
 
     .about-event .container {
       max-width: 1200px;
@@ -471,6 +479,11 @@
       overflow: hidden;
     }
 
+    body.dark-mode .event-highlights {
+      background: var(--deep-navy);
+      color: var(--text-primary);
+    }
+
     .event-highlights .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -507,6 +520,11 @@
       opacity: 0;
       transform: translateY(50px);
       animation: fadeInUp 1s ease forwards;
+    }
+
+    body.dark-mode .highlight-card {
+      background: var(--light-parchment);
+      color: var(--text-primary);
     }
 
     .highlight-card:nth-child(1) {
@@ -548,12 +566,18 @@
       color: var(--charcoal-dark);
     }
 
+    body.dark-mode .highlight-card h3 {
+      color: var(--primary-gold);
+    }
 
     .highlight-card p {
       font-size: 1rem;
       color: var(--text-secondary);
     }
 
+    body.dark-mode .highlight-card p {
+      color: var(--text-secondary);
+    }
 
     /* FADE-IN UP ANIMATION */
     @keyframes fadeInUp {
@@ -597,181 +621,6 @@
       }
     }
 
-    /* SCHEDULE / TIMELINE SECTION */
-    .schedule-timeline {
-      padding: 100px 20px;
-      background: var(--warm-cream);
-      color: var(--charcoal-dark);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease-in-out;
-    }
-    .schedule-timeline .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--primary-gold);
-      margin-bottom: 10px;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .section-subtitle {
-      font-size: 1.25rem;
-      margin-bottom: 50px;
-      color: var(--text-secondary);
-    }
-
-    /* TIMELINE */
-    .timeline {
-      position: relative;
-      margin: 0 auto;
-      padding-left: 20px;
-    }
-
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 20px;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(to bottom, var(--primary-gold), var(--secondary-gold));
-      border-radius: 2px;
-    }
-
-    .timeline-item {
-      position: relative;
-      margin-bottom: 50px;
-      opacity: 0;
-      transform: translateY(50px);
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .timeline-item:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-
-    .timeline-item:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-
-    .timeline-item:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-
-    .timeline-item:nth-child(4) {
-      animation-delay: 0.8s;
-    }
-
-    .timeline-dot {
-      position: absolute;
-      left: 12px;
-      width: 16px;
-      height: 16px;
-      background: var(--primary-gold);
-      border-radius: 50%;
-      border: 4px solid var(--warm-cream);
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-
-
-    .timeline-item:hover .timeline-dot {
-      transform: scale(1.5);
-      background: var(--secondary-gold);
-      box-shadow: 0 0 20px var(--primary-gold);
-    }
-
-    .timeline-content {
-      margin-left: 60px;
-      background: var(--warm-cream);
-      padding: 20px 25px;
-      border-radius: 15px;
-      box-shadow: var(--shadow-main);
-      transition: all 0.4s ease;
-    }
-
-    .timeline-item:hover .timeline-content {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .timeline-content h3 {
-      font-size: 1.5rem;
-      color: var(--primary-gold);
-      margin-bottom: 10px;
-    }
-
-    .timeline-content p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-    }
-
-
-    /* FADE-IN UP ANIMATION */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .timeline-content {
-        margin-left: 50px;
-        padding: 15px 20px;
-      }
-
-      .timeline-content h3 {
-        font-size: 1.35rem;
-      }
-
-      .timeline-content p {
-        font-size: 0.95rem;
-      }
-
-      .timeline::before {
-        left: 15px;
-      }
-
-      .timeline-dot {
-        left: 7px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .timeline-content {
-        margin-left: 45px;
-        padding: 12px 18px;
-      }
-
-      .timeline-content h3 {
-        font-size: 1.2rem;
-      }
-
-      .timeline-content p {
-        font-size: 0.9rem;
-      }
-
-      .timeline::before {
-        left: 10px;
-      }
-
-      .timeline-dot {
-        left: 5px;
-      }
-    }
 
     /* Container setup */
     .ticketing-section {
@@ -782,6 +631,10 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    body.dark-mode .ticketing-section {
+      background-color: var(--light-parchment);
+      color: var(--text-primary);
+    }
 
     /* Titles */
     .section-title {
@@ -900,6 +753,11 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    body.dark-mode .gallery-section {
+      background-color: var(--light-parchment);
+      color: var(--text-primary);
+    }
+
     /* Titles */
     .section-title {
       font-size: 2.5rem;
@@ -990,6 +848,11 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    body.dark-mode .sponsors-section {
+      background-color: var(--light-parchment);
+      color: var(--text-primary);
+    }
+
     /* Titles */
     .section-title {
       font-size: 2.5rem;
@@ -1059,6 +922,10 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    body.dark-mode .faq-section {
+      background-color: var(--light-parchment);
+      color: var(--text-primary);
+    }
 
     /* Titles */
     .section-title {
@@ -1110,6 +977,11 @@
       transition: background 0.3s ease;
     }
 
+    body.dark-mode .faq-question {
+      background-color: var(--charcoal-dark);
+      color: var(--text-primary);
+    }
+
     .faq-question:hover {
       background-color: var(--primary-gold);
       color: var(--deep-navy);
@@ -1128,6 +1000,10 @@
       transition: max-height 0.5s ease, padding 0.3s ease;
     }
 
+    body.dark-mode .faq-answer {
+      background-color: var(--light-parchment);
+      color: var(--text-primary);
+    }
 
     .faq-answer p {
       padding: 0 25px 20px 25px;
@@ -1143,6 +1019,211 @@
       position: relative;
       overflow: hidden;
       transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark-mode .cta-section {
+      background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+      color: var(--charcoal-dark);
+    }
+
+
+    
+    /* SCHEDULE / TIMELINE SECTION */
+    .schedule-timeline {
+      padding: 100px 20px;
+      background: var(--warm-cream);
+      color: var(--charcoal-dark);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease-in-out;
+    }
+
+    body.dark-mode .schedule-timeline {
+      background: var(--light-parchment);
+      color: var(--text-primary);
+    }
+
+    .schedule-timeline .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 10px;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 50px;
+      color: var(--text-secondary);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--primary-gold), var(--secondary-gold));
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 50px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .timeline-item:nth-child(1) {
+      animation-delay: 0.2s;
+    }
+
+    .timeline-item:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+
+    .timeline-item:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    .timeline-item:nth-child(4) {
+      animation-delay: 0.8s;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 12px;
+      width: 16px;
+      height: 16px;
+      background: var(--primary-gold);
+      border-radius: 50%;
+      border: 4px solid var(--warm-cream);
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .timeline-dot {
+      border: 4px solid var(--deep-navy);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      transform: scale(1.5);
+      background: var(--secondary-gold);
+      box-shadow: 0 0 20px var(--primary-gold);
+    }
+
+    .timeline-content {
+      margin-left: 60px;
+      background: var(--warm-cream);
+      padding: 20px 25px;
+      border-radius: 15px;
+      box-shadow: var(--shadow-main);
+      transition: all 0.4s ease;
+    }
+
+    body.dark-mode .timeline-content {
+      background: var(--deep-navy);
+      color: var(--text-primary);
+    }
+
+    .timeline-item:hover .timeline-content {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .timeline-content h3 {
+      font-size: 1.5rem;
+      color: var(--primary-gold);
+      margin-bottom: 10px;
+    }
+
+    body.dark-mode .timeline-content h3 {
+      color: var(--primary-gold);
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+
+    body.dark-mode .timeline-content p {
+      color: var(--text-secondary);
+    }
+
+    /* FADE-IN UP ANIMATION */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .timeline-content {
+        margin-left: 50px;
+        padding: 15px 20px;
+      }
+
+      .timeline-content h3 {
+        font-size: 1.35rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.95rem;
+      }
+
+      .timeline::before {
+        left: 15px;
+      }
+
+      .timeline-dot {
+        left: 7px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .timeline-content {
+        margin-left: 45px;
+        padding: 12px 18px;
+      }
+
+      .timeline-content h3 {
+        font-size: 1.2rem;
+      }
+
+      .timeline-content p {
+        font-size: 0.9rem;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .timeline-dot {
+        left: 5px;
+      }
     }
 
 
@@ -1165,7 +1246,9 @@
       animation: fadeInUp 1.2s ease forwards;
       opacity: 0;
     }
-   
+    body.dark-mode .cta-subtitle {
+      color: var(--deep-navy);
+    }
 
     .cta-subtitle.visible {
       opacity: 1;
@@ -1185,7 +1268,9 @@
       transition: all 0.4s var(--bounce-curve);
     }
 
- 
+    body.dark-mode .cta-button {
+      color: white;
+    }
 
     .cta-button:hover {
       transform: translateY(-5px) scale(1.05);
@@ -1546,6 +1631,44 @@
 
   <script src="../../js/components.js"></script>
 
+  <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+      const icon = item.querySelector(".faq-icon");
+
+      question.addEventListener("click", () => {
+        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
+
+        // Close all
+        faqItems.forEach(i => {
+          i.querySelector(".faq-answer").style.maxHeight = null;
+          i.querySelector(".faq-icon").textContent = "+";
+        });
+
+        if (!isOpen) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          icon.textContent = "−";
+        }
+      });
+    });
+  </script>
+  <script>
+    // Optional: fade-in subtitle when CTA section comes into view
+    const ctaSubtitle = document.querySelector('.cta-subtitle');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          ctaSubtitle.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(ctaSubtitle);
+  </script>
+  
   <!-- ================= SCRIPTS ================= -->
   <script>
     // Theme toggle functionality (if needed)
@@ -1600,22 +1723,16 @@
       observer.observe(el);
     });
   </script>
-  <script>
-    const faqItems = document.querySelectorAll(".faq-item");
 
-    faqItems.forEach(item => {
-      const question = item.querySelector(".faq-question");
-      const answer = item.querySelector(".faq-answer");
-      const icon = item.querySelector(".faq-icon");
+    <script src="../../js/main.js"></script>
 
-      question.addEventListener("click", () => {
-        const isOpen = answer.style.maxHeight && answer.style.maxHeight !== "0px";
+    <button id="scrollTopBtn" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    <script src="../../js/DMtheme.js"></script>
 
-        // Close all
-        faqItems.forEach(i => {
-          i.querySelector(".faq-answer").style.maxHeight = null;
-          i.querySelector(".faq-icon").textContent = "+";
-        });
+    <script src="../../js/components.js"></script>
+    <script src="../../js/theme.js"></script>
 
         if (!isOpen) {
           answer.style.maxHeight = answer.scrollHeight + "px";

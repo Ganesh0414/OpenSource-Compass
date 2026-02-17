@@ -33,6 +33,14 @@ body.dark-mode {
     text-align: left;
 }
 
+.typing-indicator {
+    font-size: 13px;
+    opacity: 0.7;
+    margin: 8px 12px;
+    font-style: italic;
+    color: #555;
+}
+
 
 /* Floating Chat Button */
 .chat-widget-btn {
